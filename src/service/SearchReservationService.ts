@@ -20,17 +20,19 @@ class SearchReservationService {
     }
 
     public async execute(): Promise<RoomData[] | null> {
+        if (!this.checkIn) {
+            throw new Error('A data de check-in é obrigatória.');
+        } else if (!this.checkOut) {
+            throw new Error('A data de check-out é obrigatória.');
+        }
+
         const checkIn = formatDate(this.checkIn);
 
         const checkOut = formatDate(this.checkOut);
 
         const currentDateParsed = formatDate(format(new Date(), 'dd-MM-yyyy'));
 
-        if (!checkIn) {
-            throw new Error('A data de check-in é obrigatória.');
-        } else if (!checkOut) {
-            throw new Error('A data de check-out é obrigatória.');
-        } else if (isBefore(checkOut, checkIn)) {
+        if (isBefore(checkOut, checkIn)) {
             throw new Error(
                 'A data de check-out deve ser igual ou maior que a data de check-in.',
             );

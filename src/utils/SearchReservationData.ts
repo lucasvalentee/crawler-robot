@@ -60,7 +60,7 @@ export default async function searchReservationData({
             // =================================================================
             classSlide.forEach(slide => {
                 image.push(
-                    `https://myreservations.omnibees.com/${slide
+                    `https://myreservations.omnibees.com${slide
                         .querySelector('img')
                         ?.getAttribute('src')}`,
                 );

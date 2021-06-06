@@ -15,7 +15,7 @@ routes.post('/buscar', async (request, response) => {
         const roomData = await searchReservationService.execute();
 
         if (!roomData) {
-            throw Error(
+            throw new Error(
                 'Desculpe-nos. Não existem apartamentos disponíveis para a pesquisa realizada.',
             );
         }

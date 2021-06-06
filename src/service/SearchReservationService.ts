@@ -26,7 +26,11 @@ class SearchReservationService {
 
         const currentDateParsed = formatDate(format(new Date(), 'dd-MM-yyyy'));
 
-        if (isBefore(checkOut, checkIn)) {
+        if (!checkIn) {
+            throw new Error('A data de check-in é obrigatória.');
+        } else if (!checkOut) {
+            throw new Error('A data de check-out é obrigatória.');
+        } else if (isBefore(checkOut, checkIn)) {
             throw new Error(
                 'A data de check-out deve ser igual ou maior que a data de check-in.',
             );

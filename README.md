@@ -2,7 +2,7 @@
 
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/lucasvalentee/crawler-robot/blob/master/LICENSE)
 
-# Sobre o projeto
+## Sobre o projeto
 
 Esse projeto consiste em uma aplicação node com typescript para criar um crawler que irá buscar quartos disponíveis para reserva no site http://lecanton.com.br/ dentro de um período de datas definido para check-in e check-out.
 
@@ -41,7 +41,7 @@ O robô será chamado na seguinte rota POST: <b>http://localhost:3333/buscar</b>
 ]
 ```
 
-### Tratamento de erros esperados
+## Tratamento de erros esperados
 
 </br><b>- Caso a data de check-in ou check-out esteja vazia ou não for informada.</b>
 
@@ -87,7 +87,7 @@ O robô será chamado na seguinte rota POST: <b>http://localhost:3333/buscar</b>
 }
 ```
 
-# Autor
+## Autor
 
 Lucas Valente
 

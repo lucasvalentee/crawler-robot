@@ -1,23 +1,19 @@
-# Robô Crawler
+## About the project
 
-[![NPM](https://img.shields.io/npm/l/react)](https://github.com/lucasvalentee/crawler-robot/blob/master/LICENSE)
+This project consists of an application node with typing to create a crawler that will search for rooms available for reservation on the website http://lecanton.com.br/ within a defined period of dates for check-in and check-out.
 
-## Sobre o projeto
+## How to start
 
-Esse projeto consiste em uma aplicação node com typescript para criar um crawler que irá buscar quartos disponíveis para reserva no site http://lecanton.com.br/ dentro de um período de datas definido para check-in e check-out.
+1 - After cloning the repository to your machine, access the repository folder through a terminal and run the <b>yarn</b> command to install the dependencies.</br>
+2 - With the dependencies installed, run the command <b>yarn dev: server</b> to start the server.</br>
+3 - You will need a tool to make requests to the Rest API, such as <b>Insomnia</b> or <b>Postman</b>.</br>
+4 - The base URL is <b>http://localhost:3333</b>.</br>
 
-## Como iniciar o projeto
+## How to use the API
 
-1 - Após clonar o repositório para sua máquina, acesse a pasta do mesmo através de um terminal e execute o comando <b>yarn</b> para instalar as dependências.</br>
-2 - Com as dependências instaladas, execute o comando <b>yarn dev:server</b> para iniciar o servidor.</br>
-3 - Será necessário uma ferramenta para fazer as requisições para a API Rest como o <b>Insomnia</b> ou <b>Postman</b>.</br>
-4 - A URL base é <b>http://localhost:3333</b>.</br>
+The robot will be called on the following POST route: <b>http://localhost:3333/search</b>. When called, it will access a specific path and extract data and information from the available rooms, according to the check-in and check-out informed.
 
-## Como usar a API
-
-O robô será chamado na seguinte rota POST: <b>http://localhost:3333/buscar</b>. Ao ser chamado ele irá acessar um caminho específico e, extrair os dados e informações do quartos disponíveis, conforme o check-in e check-out informado.
-
-</br><b>Exemplo do body da requisição</b>
+</br><b>Example of the request body</b>
 
 ```JSON
 {
@@ -26,7 +22,7 @@ O robô será chamado na seguinte rota POST: <b>http://localhost:3333/buscar</b>
 }
 ```
 
-</br><b>Exemplo do retorno esperado</b>
+</br><b>Example of expected return</b>
 
 ```JSON
 [
@@ -41,9 +37,9 @@ O robô será chamado na seguinte rota POST: <b>http://localhost:3333/buscar</b>
 ]
 ```
 
-## Tratamento de erros esperados
+## Handling of expected errors
 
-</br><b>- Caso a data de check-in ou check-out esteja vazia ou não for informada.</b>
+If the check-in or check-out date is empty or not informed.
 
 ```JSON
 {
@@ -57,7 +53,7 @@ O robô será chamado na seguinte rota POST: <b>http://localhost:3333/buscar</b>
 }
 ```
 
-</br><b>- Comparação entre a data de check-in e check-out.</b>
+</br>Comparison between check-in and check-out date.
 
 ```JSON
 {
@@ -65,7 +61,7 @@ O robô será chamado na seguinte rota POST: <b>http://localhost:3333/buscar</b>
 }
 ```
 
-</br><b>- Comparação entre a data de check-in ou check-out com a data atual.</b>
+</br>Comparison of check-in or check-out date with the current date.
 
 ```JSON
 {
@@ -79,7 +75,7 @@ O robô será chamado na seguinte rota POST: <b>http://localhost:3333/buscar</b>
 }
 ```
 
-</br><b>- Caso a API não encontre informações sobre reservas disponíveis.</b>
+</br>If the API does not find information about available reservations.
 
 ```JSON
 {
@@ -87,10 +83,12 @@ O robô será chamado na seguinte rota POST: <b>http://localhost:3333/buscar</b>
 }
 ```
 
-## Autor
+## Author
 
 Lucas Valente
 
-https://www.linkedin.com/in/lucas-valentee/
+[![Linkedin Badge](https://img.shields.io/badge/-Linkedin-blue?style=flat-square&logo=Linkedin&logoColor=white&&link=https://www.linkedin.com/in/lucas-valentee/)](https://www.linkedin.com/in/lucas-valentee/)
 
+## License
 
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/lucasvalentee/crawler-robot/blob/master/LICENSE)
